@@ -1,7 +1,11 @@
 import React from "react";
-import Image from 'next/image';
 
-const EnhancedHeader = ({ search, setSearch }) => {
+interface EnhancedHeaderProps {
+  search: any; // The current search string
+  setSearch: (value: string) => void; // A function to update the search string
+}
+
+const EnhancedHeader: React.FC<EnhancedHeaderProps> = ({ search, setSearch }) => {
   return (
     <div className="flex justify-start items-center mb-4 p-4 rounded-lg bg-gradient-to-r from-white via-gray-50 to-white">
       {/* Search Input */}
@@ -14,8 +18,14 @@ const EnhancedHeader = ({ search, setSearch }) => {
           onChange={(e) => setSearch(e.target.value)}
         />
         {/* Icon inside input */}
-        <Image alt='copilot' src="/copilot.jpg" width={35} // Required when not using `fill`
-  height={60} className="rounded-full mr-4 absolute right-3 top-2/4 transform -translate-y-2/4 text-blue-600 text-xl" />
+        <img
+          alt="copilot"
+          src="/copilot.jpg"
+          width={35} // Required when not using `fill`
+          height={60}
+          className="rounded-full mr-4 absolute right-3 top-2/4 transform -translate-y-2/4"
+        />
+        {/* Uncomment this if you are using an icon like FontAwesome */}
         {/* <FaRobot className="absolute right-3 top-2/4 transform -translate-y-2/4 text-blue-600 text-xl" /> */}
       </div>
     </div>

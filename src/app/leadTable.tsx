@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import EnhancedHeader from "./enhancedHeader";
 
-const LeadTable = () => {
-  const [search, setSearch] = useState("");
+interface Lead {
+  name: string;
+  topic: string;
+  status: string;
+  createdOn: string;
+}
 
-  // Updated leads with more mock data
-  const initialLeads = [
+const LeadTable: React.FC = () => {
+  const [search, setSearch] = useState<string>("");
+  const initialLeads: Lead[] = [
     { name: "Winford Asher", topic: "Cafe A100 for commercial use", status: "New", createdOn: "2024-04-02T12:00:00" },
     { name: "Josia Love", topic: "Upgrading service plan", status: "New", createdOn: "2024-03-30T07:45:00" },
     { name: "Harrison Curtis", topic: "Issue with throughput on EspressoMaster", status: "New", createdOn: "2024-03-28T15:30:00" },
@@ -28,12 +33,12 @@ const LeadTable = () => {
     { name: "Lucas Lewis", topic: "Support on barista tools", status: "Follow-Up", createdOn: "2024-02-28T11:30:00" },
   ];
 
-  const [leads, setLeads] = useState(initialLeads);
-  const [sortField, setSortField] = useState("name");
-  const [sortOrder, setSortOrder] = useState("asc");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedLeads, setSelectedLeads] = useState([]);
-  const itemsPerPage = 10; // Updated to 10 items per page
+  const [leads, setLeads] = useState<Lead[]>(initialLeads);
+  const [sortField, setSortField] = useState<keyof Lead>("name");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [selectedLeads, setSelectedLeads] = useState<string[]>([]);
+  const itemsPerPage = 10;
 
   // Filter and sort logic
   const filteredLeads = leads
@@ -56,21 +61,16 @@ const LeadTable = () => {
     currentPage * itemsPerPage
   );
 
-  const handleSort = (field) => {
+  const handleSort = (field: keyof Lead) => {
     setSortField(field);
     setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
   };
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-    setCurrentPage(1); // Reset to first page on new search
-  };
-
-  const toggleLeadSelection = (name) => {
+  const toggleLeadSelection = (name: string) => {
     setSelectedLeads((prev) =>
       prev.includes(name)
-        ? prev.filter((lead) => lead !== name) // Remove if already selected
-        : [...prev, name] // Add if not selected
+        ? prev.filter((lead) => lead !== name)
+        : [...prev, name]
     );
   };
 
@@ -97,6 +97,7 @@ const LeadTable = () => {
     <div className="bg-white shadow-md rounded-lg border border-gray-200 p-4 max-w-6xl mx-auto">
       {/* Enhanced Header */}
       <EnhancedHeader search={search} setSearch={setSearch} />
+      <p>Search Query: {search}</p>
 
       {/* Table */}
       <div className="overflow-x-auto">
