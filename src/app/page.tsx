@@ -158,12 +158,12 @@ export default function Example() {
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
-  const [openDropdown, setOpenDropdown] = useState(null); // State for dropdown
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleDropdown = (name: string | null): void => {
     setOpenDropdown(openDropdown === name ? null : name); // Toggle dropdown
-  }
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  };
 
   return (
     <>
