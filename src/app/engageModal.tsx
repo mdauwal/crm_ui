@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function EngageModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("engage"); // State for tab switching
+  const [activeTab, setActiveTab] = useState<"engage" | "search">("engage"); // Explicit type for activeTab
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
