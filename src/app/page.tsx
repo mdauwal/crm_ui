@@ -151,6 +151,7 @@ function classNames(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
+
 export default function Example() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -160,9 +161,8 @@ export default function Example() {
   const [openDropdown, setOpenDropdown] = useState(null); // State for dropdown
 
   const toggleDropdown = (name: string | null): void => {
-  setOpenDropdown(openDropdown === name ? null : name); // Toggle dropdown
-};
-
+    setOpenDropdown(openDropdown === name ? null); // Toggle dropdown
+  }
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (

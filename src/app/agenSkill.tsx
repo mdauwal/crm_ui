@@ -1,6 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const AgentSkillPopup = ({ onClose }) => {
+interface AgentSkillPopupProps {
+  onClose: () => void; // Ensure onClose is typed as a function that takes no arguments and returns void
+}
+
+const AgentSkillPopup: React.FC<AgentSkillPopupProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
