@@ -147,45 +147,21 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
-type ClassNamesInput = (string | undefined | null | false)[]; // Define the types for classNames input
-
-function classNames(...classes: ClassNamesInput): string {
+function classNames(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false); // Specify boolean type
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // Specify string or null type
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen); // This works as expected with boolean type
+    setIsPopupOpen(!isPopupOpen);
   };
+  const [openDropdown, setOpenDropdown] = useState(null); // State for dropdown
 
-  const toggleDropdown = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name); // Compare and toggle with string type
-  };
-
-  return (
-    <div>
-      {/* Example JSX */}
-      <button onClick={togglePopup}>
-        {isPopupOpen ? "Close Popup" : "Open Popup"}
-      </button>
-
-      <div>
-        <button onClick={() => toggleDropdown("dropdown1")}>
-          Toggle Dropdown 1
-        </button>
-        {openDropdown === "dropdown1" && <div>Dropdown 1 Content</div>}
-
-        <button onClick={() => toggleDropdown("dropdown2")}>
-          Toggle Dropdown 2
-        </button>
-        {openDropdown === "dropdown2" && <div>Dropdown 2 Content</div>}
-      </div>
-    </div>
-  );
-}
+  const toggleDropdown = (name: string | null): void => {
+  setOpenDropdown(openDropdown === name ? null : name); // Toggle dropdown
+};
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
