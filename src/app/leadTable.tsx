@@ -164,14 +164,14 @@ const LeadTable = () => {
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="px-4 py-1 text-sm text-white bg-gray-400 rounded-md disabled:opacity-50"
+            className="px-4 py-1 text-sm text-black border border-blue-300 bg-white rounded-md disabled:opacity-50"
           >
             Previous
           </button>
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="px-4 py-1 text-sm text-white bg-gray-400 rounded-md disabled:opacity-50"
+            className="px-4 py-1 text-sm text-black border border-blue-300 bg-white rounded-md disabled:opacity-50"
           >
             Next
           </button>

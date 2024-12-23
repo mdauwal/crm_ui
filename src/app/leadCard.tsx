@@ -1,15 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import GreetingProgress from "./greetingProgress";
+import EngageModal from "./engageModal";
+
 
 const LeadCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to toggle modal visibility
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 border border-gray-200 max-w-6xl mx-auto">
+    <div className="bg-white shadow-md rounded-lg p-6 border border-blue-300 max-w-6xl mx-auto">
       <GreetingProgress />
 
       {/* Main Section */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* Left Side: Lead Highlights */}
-<div className="flex-[2]">
+<div className="flex-[2] bg-white">
+  
   <p className="text-sm text-gray-500 mb-4">
     Copilot has pinpointed 20 key leads that show strong purchase intent and are actively engaging. These leads need your focus.
   </p>
@@ -18,7 +25,7 @@ const LeadCard = () => {
     <div className="flex-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
       <div className="flex items-center mb-4">
         <img
-          src="/jane.jpg" // Replace with the actual path for Jane's image
+          src="/jane.jpg" // Replace with the actual path for Jane's img
           alt="Jane Reyes"
           className="w-10 h-10 rounded-full mr-4"
         />
@@ -32,11 +39,16 @@ const LeadCard = () => {
         {/* Email Info */}
       <div className="flex items-center mb-4">
         <img
-          src="/email.jpg" // Replace with the actual path for the email icon
+          src="/email.jpg" 
           alt="Email Icon"
           className="w-6 h-6 rounded-full mr-3"
         />
-        <p className="text-xs text-gray-700">Engage with Jane Reyes</p>
+        <p
+          className="text-xs text-gray-700 hover:underline cursor-pointer"
+          onClick={toggleModal}
+        >
+          <EngageModal />
+        </p>
       </div>
 
       <p className="text-xs text-gray-700">
@@ -47,12 +59,13 @@ const LeadCard = () => {
         Expand business · High buying intent
       </button>
     </div>
+    
 
     {/* Lead 2 */}
     <div className="flex-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
       <div className="flex items-center mb-4">
         <img
-          src="/alan.jpg" // Replace with the actual path for Allan's image
+          src="/alan.jpg" // Replace with the actual path for Allan's img
           alt="Allan Munger"
           className="w-10 h-10 rounded-full mr-4"
         />
@@ -72,7 +85,7 @@ const LeadCard = () => {
           alt="Prepare Icon"
           className="w-6 h-6 mr-3"
         />
-        <p className="text-xs text-gray-700">Prepare for meeting with Allan</p>
+        <p className="text-xs text-gray-700 hover:underline">Prepare for meeting with Allan</p>
       </div>
 
       <p className="text-xs text-gray-700">
@@ -88,7 +101,7 @@ const LeadCard = () => {
 
 
         {/* Right Side: Key Activities */}
-        <div className="flex-[1]">
+        <div className="flex-[1] bg-white shadow-md rounded-lg p-6 border border-gray-300">
           <h3 className="text-sm font-semibold text-gray-800 mb-4">Other key activities</h3>
           <div className="space-y-4">
             {/* Activity 1 */}
@@ -97,7 +110,7 @@ const LeadCard = () => {
                 <p className="text-sm text-gray-800">Cafe A100 for Woodland Bank</p>
                 <p className="text-xs text-gray-500">$280,000 · 8 days to close</p>
               </div>
-              <button className="mt-4 text-sm text-blue-600 font-medium hover:underline">
+              <button className="mt-4 text-sm text-gray-600 font-medium hover:underline">
                 Review draft
               </button>
             </div>
@@ -108,12 +121,12 @@ const LeadCard = () => {
                 <p className="text-sm text-gray-800">Partnership opportunity for Fabrikam</p>
                 <p className="text-xs text-gray-500">$5,000,000 · 12 days to close</p>
               </div>
-              <button className="mt-4 text-sm text-blue-600 font-medium hover:underline">
+              <button className="mt-4 text-sm text-gray-600 font-medium hover:underline">
                 Prepare
               </button>
             </div>
           </div>
-          <button className="mt-4 text-sm text-blue-600 font-medium hover:underline">
+          <button className="mt-4 text-sm text-blue-800 hover:underline">
             Show all key activities
           </button>
         </div>

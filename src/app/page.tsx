@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import {
   Dialog,
@@ -27,7 +26,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import LeadCard from "./leadCard";
 import LeadTable from "./leadTable";
-import LeadToolbar from "./leadToolbar";
+import AgentSkillPopup from "./agenSkill";
 
 const navigation = [
   { name: "Home", href: "#", icon: "/home-icon.png", current: true },
@@ -153,6 +152,11 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
   const [openDropdown, setOpenDropdown] = useState(null); // State for dropdown
 
   const toggleDropdown = (name) => {
@@ -205,11 +209,12 @@ export default function Example() {
               {/* Sidebar component, swap this element with another sidebar if you like */}
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                 <div className="flex h-16 shrink-0 items-center">
-                  <img
+                  {/* <img
                     alt="copilot"
                     src="/copilot.jpg"
-                    className="h-8 w-auto rounded-full"
-                  />
+                    width={300} // Required when not using `fill`
+  height={200}
+                  /> */}
                 </div>
                 <nav className="flex flex-1 flex-col">
                   <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -493,11 +498,12 @@ export default function Example() {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
             <div className="flex h-16 shrink-0 items-center">
-              <img
+              {/* <img
                 alt="copilot"
                 src="/copilot.jpg"
-                className="h-8 rounded-full w-auto"
-              />
+                width={40} // Required when not using `fill`
+  height={50}
+              /> */}
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -863,6 +869,18 @@ export default function Example() {
 
           <main className="py-10">
             <div className="px-4 sm:px-6 lg:px-8">
+              {/* Menu */}
+      <button
+        onClick={togglePopup}
+        className="bg-white text-black-200 border border-blue-300 px-4 py-2 mb-5 rounded hover:bg-gray-100"
+      >
+        Agent Skill
+      </button>
+
+       {/* Pop-up */}
+       {isPopupOpen && (
+        <AgentSkillPopup onClose={togglePopup} />
+      )}
               <LeadCard />
             </div>
             <div className="px-4 mt-5 sm:px-6 lg:px-8">
