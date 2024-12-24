@@ -12,7 +12,7 @@ const MeetingModal = () => {
     setIsModalOpen(false);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add logic to handle the form submission
     console.log("Meeting prepared!");
@@ -96,7 +96,7 @@ const MeetingModal = () => {
                   id="description"
                   placeholder="Enter meeting details"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows="4"
+                  rows={4}
                   required
                 ></textarea>
               </div>

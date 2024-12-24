@@ -25,14 +25,16 @@ const LeadCard: React.FC = () => {
               alt="Email Icon"
               className="w-6 h-6 rounded-full mr-3"
             />
-            <p
+            <span
               className="text-xs text-gray-700 hover:underline cursor-pointer"
               onClick={openModal}
             >
               <EngageModal />
-            </p>
+            </span>
           </div>
-          Jane may be interested in upgrading espresso machines for her in-store coffee shops.
+          <span className="text-xs text-gray-700">
+            Jane may be interested in upgrading espresso machines for her in-store coffee shops.
+          </span>
         </>
       ),
       extra: "Expand business · High buying intent",
@@ -50,14 +52,16 @@ const LeadCard: React.FC = () => {
                 alt="Prepare Icon"
                 className="w-6 h-6 mr-3"
               />
-              <p
+              <span
                 className="text-xs text-gray-700 hover:underline cursor-pointer"
                 onClick={openModal}
               >
                 <MeetingModal />
-              </p>
+              </span>
             </div>
-            Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract.
+            <span className="text-xs text-gray-700">
+              Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract.
+            </span>
           </div>
         </>
       ),
@@ -76,21 +80,23 @@ const LeadCard: React.FC = () => {
                 alt="Product Icon"
                 className="w-6 h-6 mr-3"
               />
-              <p
+              <span
                 onClick={openModal}
                 className="text-xs text-gray-700 hover:underline cursor-pointer"
               >
                 Schedule a Meeting with Auwal
-              </p>
+              </span>
             </div>
-            Prepare for high-buying intent product scheduled for 2 PM regarding upgrading service contract.
+            <span className="text-xs text-gray-700">
+              Prepare for high-buying intent product scheduled for 2 PM regarding upgrading service contract.
+            </span>
           </div>
         </>
       ),
       extra: "High interest · Schedule demo",
     },
   ];
-
+  
   // Slide to the next lead
   const handleNext = () => {
     setCurrentLead((prev) => (prev + 1) % leads.length);
