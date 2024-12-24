@@ -1,3 +1,5 @@
+"use client";  // Mark this file as a client component
+
 import { useState } from "react";
 
 export default function EngageModal() {
@@ -19,9 +21,17 @@ export default function EngageModal() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full">
+          {/* Modal content with animation */}
+          <div
+            className="bg-white rounded-lg shadow-lg max-w-lg sm:max-w-3xl w-full transform transition-all duration-300 scale-95 sm:scale-100 animate-fadeIn"
+          >
             {/* Modal Header */}
             <div className="flex justify-between items-center p-4 border-b">
+              <img
+                src="/mail.png"
+                alt="email reyes"
+                className="w-8 h-8 rounded-md mr-4"
+              />
               <h2 className="text-sm font-semibold">Engage with Jane Reyes</h2>
               <button
                 className="text-gray-500 hover:text-gray-700"
@@ -34,13 +44,15 @@ export default function EngageModal() {
             {/* Profile Info */}
             <div className="flex items-center p-4">
               <img
-                src="/jane-profile.jpg"
+                src="/jane.jpg"
                 alt="Jane Reyes"
                 className="w-12 h-12 rounded-full mr-4"
               />
               <div>
                 <p className="font-semibold">Jane Reyes</p>
-                <p className="text-sm text-gray-500">COO, Northwind Traders</p>
+                <p className="text-sm text-gray-500">
+                  COO, Northwind Traders
+                </p>
               </div>
             </div>
 
@@ -100,7 +112,7 @@ export default function EngageModal() {
                   </ul>
 
                   {/* Lead Details */}
-                  <div className="mt-4 flex space-x-4">
+                  <div className="mt-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
                     <div className="flex items-center space-x-2">
                       <span className="text-blue-500">✔</span>
                       <span>Decision Maker: Yes</span>
@@ -117,7 +129,9 @@ export default function EngageModal() {
                 </div>
               ) : (
                 <div>
-                  <p className="text-gray-700">Search functionality coming soon...</p>
+                  <p className="text-gray-700">
+                    Search functionality coming soon...
+                  </p>
                 </div>
               )}
             </div>

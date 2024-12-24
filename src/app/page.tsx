@@ -797,7 +797,7 @@ export default function Example() {
             />
 
             <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-              <form action="#" method="GET" className="grid flex-1 grid-cols-1">
+              {/* <form action="#" method="GET" className="grid flex-1 grid-cols-1">
                 <input
                   name="search"
                   type="search"
@@ -809,7 +809,7 @@ export default function Example() {
                   aria-hidden="true"
                   className="pointer-events-none col-start-1 row-start-1 size-5 self-center text-gray-400"
                 />
-              </form>
+              </form> */}
               <div className="flex items-center gap-x-4 lg:gap-x-6">
                 <button
                   type="button"
@@ -832,7 +832,7 @@ export default function Example() {
                 
                     <img
                       alt=""
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="/auwal.jpeg"
                       className="size-8 rounded-full bg-gray-50"
                     />
                     <span className="hidden lg:flex lg:items-center">
@@ -873,7 +873,7 @@ export default function Example() {
               {/* Menu */}
       <button
         onClick={togglePopup}
-        className="bg-white text-black-200 border border-blue-300 px-4 py-2 mb-5 rounded hover:bg-gray-100"
+        className="text-black border border-blue-300 px-4 py-2 mb-5 rounded hover:bg-gray-100"
       >
         Agent Skill
       </button>

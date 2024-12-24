@@ -1,125 +1,201 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import GreetingProgress from "./greetingProgress";
 import EngageModal from "./engageModal";
+import MeetingModal from "./meetingModal";
+import { ScheduleMeetingModal } from "./scheduleModal";
 
-
-const LeadCard = () => {
+const LeadCard: React.FC = () => {
+  const [currentLead, setCurrentLead] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Function to toggle modal visibility
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  // Sample lead data
+  const leads = [
+    {
+      name: "Jane Reyes",
+      role: "COO - Northwind Traders",
+      avatar: "/jane.jpg",
+      info: (
+        <>
+          <div className="flex items-center mb-4">
+            <img
+              src="/email.jpg"
+              alt="Email Icon"
+              className="w-6 h-6 rounded-full mr-3"
+            />
+            <p
+              className="text-xs text-gray-700 hover:underline cursor-pointer"
+              onClick={openModal}
+            >
+              <EngageModal />
+            </p>
+          </div>
+          Jane may be interested in upgrading espresso machines for her in-store coffee shops.
+        </>
+      ),
+      extra: "Expand business · High buying intent",
+    },
+    {
+      name: "Allan Munger",
+      role: "Head of Real Estate Development - Contoso Coffee",
+      avatar: "/alan.jpg",
+      info: (
+        <>
+          <div className="bg-blue-50">
+            <div className="flex items-center mb-4">
+              <img
+                src="/prepare.png"
+                alt="Prepare Icon"
+                className="w-6 h-6 mr-3"
+              />
+              <p
+                className="text-xs text-gray-700 hover:underline cursor-pointer"
+                onClick={openModal}
+              >
+                <MeetingModal />
+              </p>
+            </div>
+            Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract.
+          </div>
+        </>
+      ),
+      extra: "Upcoming meeting · Due today",
+    },
+    {
+      name: "Auwal Yahaya",
+      role: "Product Manager - AfriFarma",
+      avatar: "/auwal.jpeg",
+      info: (
+        <>
+          <div className="bg-blue-50">
+            <div className="flex items-center mb-4">
+              <img
+                src="/product.png"
+                alt="Product Icon"
+                className="w-6 h-6 mr-3"
+              />
+              <p
+                onClick={openModal}
+                className="text-xs text-gray-700 hover:underline cursor-pointer"
+              >
+                Schedule a Meeting with Auwal
+              </p>
+            </div>
+            Prepare for high-buying intent product scheduled for 2 PM regarding upgrading service contract.
+          </div>
+        </>
+      ),
+      extra: "High interest · Schedule demo",
+    },
+  ];
+
+  // Slide to the next lead
+  const handleNext = () => {
+    setCurrentLead((prev) => (prev + 1) % leads.length);
+  };
+
+  // Slide to the previous lead
+  const handlePrev = () => {
+    setCurrentLead((prev) => (prev - 1 + leads.length) % leads.length);
+  };
+
   return (
     <div className="bg-white shadow-md rounded-lg p-6 border border-blue-300 max-w-6xl mx-auto">
       <GreetingProgress />
 
-      {/* Main Section */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* Left Side: Lead Highlights */}
-<div className="flex-[2] bg-white">
-  
-  <p className="text-sm text-gray-500 mb-4">
-    Copilot has pinpointed 20 key leads that show strong purchase intent and are actively engaging. These leads need your focus.
-  </p>
-  <div className="flex gap-4">
-    {/* Lead 1 */}
-    <div className="flex-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
-      <div className="flex items-center mb-4">
-        <img
-          src="/jane.jpg" // Replace with the actual path for Jane's img
-          alt="Jane Reyes"
-          className="w-10 h-10 rounded-full mr-4"
-        />
-        <div>
-          <h3 className="text-sm font-semibold text-gray-800">Jane Reyes</h3>
-          <p className="text-xs text-gray-500">COO - Northwind Traders</p>
-        </div>
-      </div>
-
-      <div className="bg-blue-50">
-        {/* Email Info */}
-      <div className="flex items-center mb-4">
-        <img
-          src="/email.jpg" 
-          alt="Email Icon"
-          className="w-6 h-6 rounded-full mr-3"
-        />
-        <p
-          className="text-xs text-gray-700 hover:underline cursor-pointer"
-          onClick={toggleModal}
-        >
-          <EngageModal />
-        </p>
-      </div>
-
-      <p className="text-xs text-gray-700">
-        Jane may be interested in upgrading espresso machines for her in-store coffee shops.
-      </p>
-      </div>
-      <button className="mt-4 text-sm text-gray-800 font-medium hover:underline">
-        Expand business · High buying intent
-      </button>
-    </div>
-    
-
-    {/* Lead 2 */}
-    <div className="flex-1 bg-gray-50 p-4 rounded-lg border border-gray-200">
-      <div className="flex items-center mb-4">
-        <img
-          src="/alan.jpg" // Replace with the actual path for Allan's img
-          alt="Allan Munger"
-          className="w-10 h-10 rounded-full mr-4"
-        />
-        <div>
-          <h3 className="text-sm font-semibold text-gray-800">Allan Munger</h3>
-          <p className="text-xs text-gray-500">
-            Head of Real Estate Development - Contoso Coffee
+        <div className="flex-[2] bg-white relative">
+          <p className="text-sm text-gray-500 mb-4">
+            Copilot has pinpointed 20 key leads that show strong purchase intent and are actively engaging. These leads need your focus.
           </p>
+
+          <div className="flex overflow-hidden gap-4 relative">
+            {/* Slide Buttons */}
+            <button
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full shadow-md"
+              onClick={handlePrev}
+            >
+              &#8592;
+            </button>
+
+            <button
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full shadow-md"
+              onClick={handleNext}
+            >
+              &#8594;
+            </button>
+
+            {/* Lead Cards */}
+            {leads.map((lead, index) => {
+              const isVisible =
+                index === currentLead ||
+                (index === (currentLead + 1) % leads.length &&
+                  window.innerWidth >= 768);
+              return (
+                <div
+                  key={index}
+                  className={`flex-1 bg-gray-50 p-4 rounded-lg border border-gray-200 transition-transform ${
+                    isVisible ? "block" : "hidden"
+                  }`}
+                >
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={lead.avatar}
+                      alt={lead.name}
+                      className="w-10 h-10 rounded-full mr-4"
+                    />
+                    <div>
+                      <h3 className="text-sm font-semibold text-gray-800">
+                        {lead.name}
+                      </h3>
+                      <p className="text-xs text-gray-500">{lead.role}</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-2 rounded">
+                    <p className="text-xs text-gray-700">{lead.info}</p>
+                  </div>
+
+                  <button className="mt-4 text-sm text-gray-800 font-medium hover:underline">
+                    {lead.extra}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-
-      {/* Prepare Info */}
-      <div className="bg-blue-50">
-      <div className="flex items-center  mb-4">
-        <img
-          src="/prepare.png" // Replace with the actual path for the prepare icon
-          alt="Prepare Icon"
-          className="w-6 h-6 mr-3"
-        />
-        <p className="text-xs text-gray-700 hover:underline">Prepare for meeting with Allan</p>
-      </div>
-
-      <p className="text-xs text-gray-700">
-        Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract.
-      </p>
-      </div>
-      <p className="text-xs text-gray-500 mt-4">
-        <span className="font-medium text-gray-800">Upcoming meeting</span> · Due today
-      </p>
-    </div>
-  </div>
-</div>
-
 
         {/* Right Side: Key Activities */}
         <div className="flex-[1] bg-white shadow-md rounded-lg p-6 border border-gray-300">
-          <h3 className="text-sm font-semibold text-gray-800 mb-4">Other key activities</h3>
+          <h3 className="text-sm font-semibold text-gray-800 mb-4">
+            Other key activities
+          </h3>
           <div className="space-y-4">
-            {/* Activity 1 */}
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <div>
-                <p className="text-sm text-gray-800">Cafe A100 for Woodland Bank</p>
-                <p className="text-xs text-gray-500">$280,000 · 8 days to close</p>
+                <p className="text-sm text-gray-800">
+                  Cafe A100 for Woodland Bank
+                </p>
+                <p className="text-xs text-gray-500">
+                  $280,000 · 8 days to close
+                </p>
               </div>
               <button className="mt-4 text-sm text-gray-600 font-medium hover:underline">
                 Review draft
               </button>
             </div>
 
-            {/* Activity 2 */}
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <div>
-                <p className="text-sm text-gray-800">Partnership opportunity for Fabrikam</p>
-                <p className="text-xs text-gray-500">$5,000,000 · 12 days to close</p>
+                <p className="text-sm text-gray-800">
+                  Partnership opportunity for Fabrikam
+                </p>
+                <p className="text-xs text-gray-500">
+                  $5,000,000 · 12 days to close
+                </p>
               </div>
               <button className="mt-4 text-sm text-gray-600 font-medium hover:underline">
                 Prepare
@@ -130,6 +206,7 @@ const LeadCard = () => {
             Show all key activities
           </button>
         </div>
+        {isModalOpen && <ScheduleMeetingModal onClose={closeModal} />}
       </div>
     </div>
   );
