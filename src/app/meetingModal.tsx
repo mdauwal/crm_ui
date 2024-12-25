@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 
 const MeetingModal = () => {
@@ -95,7 +94,7 @@ const MeetingModal = () => {
                 <textarea
                   id="description"
                   placeholder="Enter meeting details"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="resize-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   rows={4}
                   required
                 ></textarea>

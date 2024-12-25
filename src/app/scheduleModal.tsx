@@ -4,7 +4,7 @@ interface ScheduleMeetingModalProps {
   onClose: () => void;
 }
 
-export const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) => {
+const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) => {
   const [formData, setFormData] = useState({
     title: "",
     date: "",
@@ -125,3 +125,4 @@ export const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onCl
     </div>
   );
 };
+ export default ScheduleMeetingModal;
