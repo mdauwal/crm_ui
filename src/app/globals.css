@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Checkbox Style */
+input[type="checkbox"] {
+  accent-color: gray;
+}

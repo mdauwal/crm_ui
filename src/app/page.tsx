@@ -13,16 +13,8 @@ import {
 import {
   Bars3Icon,
   BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import LeadCard from "./leadCard";
 import LeadTable from "./leadTable";
@@ -63,7 +55,7 @@ const works = [
     id: 1,
     name: "Sales accelerator",
     href: "#",
-    icon: "/sales.png",
+    icon: "/rocket.png",
     current: false,
   },
   {
@@ -77,14 +69,14 @@ const works = [
     id: 3,
     name: "Activities",
     href: "#",
-    icon: "/activities.jpg",
+    icon: "/activities.png",
     current: false,
   },
 ];
 
 const customers = [
-  { id: 1, name: "Accounts", href: "#", icon: "/account.jpg", current: false },
-  { id: 2, name: "Contact", href: "#", icon: "/contact.jpg", current: false },
+  { id: 1, name: "Accounts", href: "#", icon: "/paper.jpg", current: false },
+  { id: 2, name: "Contact", href: "#", icon: "/user.png", current: false },
 ];
 
 const sales = [
@@ -100,7 +92,7 @@ const sales = [
     id: 3,
     name: "Competitors",
     href: "#",
-    icon: "/competitor.png",
+    icon: "/users.jpg",
     current: false,
   },
 ];
@@ -209,14 +201,8 @@ export default function Example() {
               </TransitionChild>
               {/* Sidebar component, swap this element with another sidebar if you like */}
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
-                <div className="flex h-16 shrink-0 items-center">
-                  {/* <img
-                    alt="copilot"
-                    src="/copilot.jpg"
-                    width={300} // Required when not using `fill`
-  height={200}
-                  /> */}
-                </div>
+                {/* <div className="flex h-16 shrink-0 items-center">
+                </div> */}
                 <nav className="flex flex-1 flex-col">
                   <ul role="list" className="flex flex-1 flex-col gap-y-7">
                     <li>
@@ -498,14 +484,6 @@ export default function Example() {
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
-            <div className="flex h-16 shrink-0 items-center">
-              {/* <img
-                alt="copilot"
-                src="/copilot.jpg"
-                width={40} // Required when not using `fill`
-  height={50}
-              /> */}
-            </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>
@@ -517,7 +495,7 @@ export default function Example() {
                           className={classNames(
                             item.current
                               ? "bg-gray-100 text-gray-800"
-                              : "text-gray-700 hover:bg-gray-50",
+                              : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
                             "flex items-center gap-3 p-2 rounded-md"
                           )}
                         >
@@ -561,7 +539,7 @@ export default function Example() {
                 </li>
 
                 <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">
+                  <div className="text-sm/6 font-bold text-gray-800">
                     My Works
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -571,9 +549,9 @@ export default function Example() {
                           href={work.href}
                           className={classNames(
                             work.current
-                              ? "bg-gray-50 text-gray-600"
-                              : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                            "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                              ? "bg-gray-50 text-gray-400"
+                              : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
+                            "group flex gap-x-3 rounded-md p-2 text-sm/6"
                           )}
                         >
                           <img
@@ -583,7 +561,7 @@ export default function Example() {
                               work.current
                                 ? "border-gray-600"
                                 : "border-gray-200 group-hover:border-gray-600",
-                              "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                              "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                             )}
                           />
                           <span className="truncate">{work.name}</span>
@@ -595,7 +573,7 @@ export default function Example() {
 
                 {/* customers */}
                 <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">
+                  <div className="text-sm/6 font-bold text-gray-800">
                     Customers
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -606,8 +584,8 @@ export default function Example() {
                           className={classNames(
                             customer.current
                               ? "bg-gray-50 text-gray-600"
-                              : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                            "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                              : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
+                            "group flex gap-x-3 rounded-md p-2 text-sm/6"
                           )}
                         >
                           <img
@@ -617,7 +595,7 @@ export default function Example() {
                               customer.current
                                 ? "border-gray-600"
                                 : "border-gray-200 group-hover:border-gray-600",
-                              "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                              "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                             )}
                           />
                           <span className="truncate">{customer.name}</span>
@@ -628,7 +606,7 @@ export default function Example() {
                 </li>
 
                 <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">
+                  <div className="text-sm/6 font-bold text-gray-800">
                     Sales
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -639,8 +617,8 @@ export default function Example() {
                           className={classNames(
                             sale.current
                               ? "bg-gray-50 text-gray-600"
-                              : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                            "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                              : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
+                            "group flex gap-x-3 rounded-md p-2 text-sm/6"
                           )}
                         >
                           <img
@@ -649,8 +627,8 @@ export default function Example() {
                             className={classNames(
                               sale.current
                                 ? "border-gray-600"
-                                : "border-gray-200 group-hover:border-gray-600",
-                              "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                                : "border-gray-200 group-hover:border-gray-800",
+                              "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                             )}
                           />
                           <span className="truncate">{sale.name}</span>
@@ -662,7 +640,7 @@ export default function Example() {
 
                 {/* collateral */}
                 <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">
+                  <div className="text-sm/6 font-bold text-gray-800">
                     Collateral
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -672,9 +650,9 @@ export default function Example() {
                           href={collaterals.href}
                           className={classNames(
                             collaterals.current
-                              ? "bg-gray-50 text-gray-600"
-                              : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                            "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                              ? "bg-gray-50 text-gray-400"
+                              : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
+                            "group flex gap-x-3 rounded-md p-2 text-sm/6"
                           )}
                         >
                           <img
@@ -684,7 +662,7 @@ export default function Example() {
                               collaterals.current
                                 ? "border-gray-600"
                                 : "border-gray-200 group-hover:border-gray-600",
-                              "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                              "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                             )}
                           />
                           <span className="truncate">{collaterals.name}</span>
@@ -695,7 +673,7 @@ export default function Example() {
                 </li>
                 {/* marketing */}
                 <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">
+                  <div className="text-sm/6 font-bold text-gray-800">
                     Marketing
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -705,9 +683,9 @@ export default function Example() {
                           href={marketing.href}
                           className={classNames(
                             marketing.current
-                              ? "bg-gray-50 text-gray-600"
-                              : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                            "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                              ? "bg-gray-50 text-gray-400"
+                              : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
+                            "group flex gap-x-3 rounded-md p-2 text-sm/6"
                           )}
                         >
                           <img
@@ -717,7 +695,7 @@ export default function Example() {
                               marketing.current
                                 ? "border-gray-600"
                                 : "border-gray-200 group-hover:border-gray-600",
-                              "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                              "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                             )}
                           />
                           <span className="truncate">{marketing.name}</span>
@@ -729,7 +707,7 @@ export default function Example() {
 
                 {/* performance */}
                 <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">
+                  <div className="text-sm/6 font-bold text-gray-800">
                     Performance
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -739,9 +717,9 @@ export default function Example() {
                           href={perform.href}
                           className={classNames(
                             perform.current
-                              ? "bg-gray-50 text-gray-600"
+                              ? "bg-gray-50 text-gray-400"
                               : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                            "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                            "group flex gap-x-3 rounded-md p-2 text-sm/6"
                           )}
                         >
                           <span
@@ -762,18 +740,6 @@ export default function Example() {
                 </li>
 
                 {/* end of sidebar */}
-                {/* <li className="mt-auto">
-                  <a
-                    href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-gray-600"
-                  >
-                    <Cog6ToothIcon
-                      aria-hidden="true"
-                      className="size-6 shrink-0 text-gray-400 group-hover:text-gray-600"
-                    />
-                    Settings
-                  </a>
-                </li> */}
               </ul>
             </nav>
           </div>
@@ -797,19 +763,6 @@ export default function Example() {
             />
 
             <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-              {/* <form action="#" method="GET" className="grid flex-1 grid-cols-1">
-                <input
-                  name="search"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  className="col-start-1 row-start-1 block size-full bg-white pl-8 text-base text-gray-900 outline-hidden placeholder:text-gray-400 sm:text-sm/6"
-                />
-                <MagnifyingGlassIcon
-                  aria-hidden="true"
-                  className="pointer-events-none col-start-1 row-start-1 size-5 self-center text-gray-400"
-                />
-              </form> */}
               <div className="flex items-center gap-x-4 lg:gap-x-6">
                 <button
                   type="button"

@@ -100,61 +100,62 @@ const LeadTable: React.FC = () => {
       <p>Search Query: {search}</p>
 
       {/* Table */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-gray-50 text-left text-gray-600 text-sm font-medium">
-              <th className="p-2 border-b border-gray-200">
-                <input
-                  type="checkbox"
-                  checked={isAllSelected}
-                  onChange={toggleSelectAll}
-                  className="cursor-pointer"
-                />
-              </th>
-              <th
-                className="p-2 border-b border-gray-200 cursor-pointer"
-                onClick={() => handleSort("name")}
-              >
-                Name {sortField === "name" && (sortOrder === "asc" ? "↑" : "↓")}
-              </th>
-              <th
-                className="p-2 border-b border-gray-200 cursor-pointer"
-                onClick={() => handleSort("topic")}
-              >
-                Topic {sortField === "topic" && (sortOrder === "asc" ? "↑" : "↓")}
-              </th>
-              <th className="p-2 border-b border-gray-200">Status Reason</th>
-              <th
-                className="p-2 border-b border-gray-200 cursor-pointer"
-                onClick={() => handleSort("createdOn")}
-              >
-                Created On {sortField === "createdOn" && (sortOrder === "asc" ? "↑" : "↓")}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {displayedLeads.map((lead, index) => (
-              <tr key={index} className="text-sm text-gray-700 hover:bg-gray-50">
-                <td className="p-2 border-b border-gray-200">
-                  <input
-                    type="checkbox"
-                    checked={selectedLeads.includes(lead.name)}
-                    onChange={() => toggleLeadSelection(lead.name)}
-                    className="cursor-pointer"
-                  />
-                </td>
-                <td className="p-2 border-b border-gray-200">{lead.name}</td>
-                <td className="p-2 border-b border-gray-200">{lead.topic}</td>
-                <td className="p-2 border-b border-gray-200">{lead.status}</td>
-                <td className="p-2 border-b border-gray-200">
-                  {new Date(lead.createdOn).toLocaleString()}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+<div className="overflow-x-auto">
+  <table className="w-full border-collapse">
+    <thead>
+      <tr className="bg-gray-50 text-left text-gray-600 text-sm font-medium">
+        <th className="p-2 border-b border-gray-200">
+          <input
+            type="checkbox"
+            checked={isAllSelected}
+            onChange={toggleSelectAll}
+            className="cursor-pointer"
+          />
+        </th>
+        <th
+          className="p-2 border-b border-gray-200 cursor-pointer"
+          onClick={() => handleSort("name")}
+        >
+          Name {sortField === "name" && (sortOrder === "asc" ? "↑" : "↓")}
+        </th>
+        <th
+          className="p-2 border-b border-gray-200 cursor-pointer"
+          onClick={() => handleSort("topic")}
+        >
+          Topic {sortField === "topic" && (sortOrder === "asc" ? "↑" : "↓")}
+        </th>
+        <th className="p-2 border-b border-gray-200">Status Reason</th>
+        <th
+          className="p-2 border-b border-gray-200 cursor-pointer"
+          onClick={() => handleSort("createdOn")}
+        >
+          Created On {sortField === "createdOn" && (sortOrder === "asc" ? "↑" : "↓")}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {displayedLeads.map((lead, index) => (
+        <tr key={index} className="text-sm text-gray-700 hover:bg-gray-50">
+          <td className="p-2 border-b border-gray-200">
+            <input
+              type="checkbox"
+              checked={selectedLeads.includes(lead.name)}
+              onChange={() => toggleLeadSelection(lead.name)}
+              className="cursor-pointer"
+            />
+          </td>
+          <td className="p-2 border-b border-gray-200">{lead.name}</td>
+          <td className="p-2 border-b border-gray-200">{lead.topic}</td>
+          <td className="p-2 border-b border-gray-200">{lead.status}</td>
+          <td className="p-2 border-b border-gray-200">
+            {new Date(lead.createdOn).toLocaleString()}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
 
       {/* Pagination */}
       <div className="mt-4 flex items-center justify-between">
