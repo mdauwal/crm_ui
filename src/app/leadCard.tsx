@@ -226,8 +226,8 @@ const LeadCard: React.FC = () => {
 
       {/* Modals */}
       {isModalOpen && <ScheduleMeetingModal onClose={handleCloseModal} />}
-      {isEngageModalOpen && <EngageModal onClose={closeEngageModal} />}
-      {isMeetingModalOpen && <MeetingModal onClose={closeMeetingModal} />}
+      {isEngageModalOpen && <EngageModal />}
+      {isMeetingModalOpen && <MeetingModal />}
     </div>
   );
 };
