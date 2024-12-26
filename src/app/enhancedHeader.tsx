@@ -21,9 +21,9 @@ const EnhancedHeader: React.FC<EnhancedHeaderProps> = ({ search, setSearch }) =>
         <img
           alt="copilot"
           src="/copilot.jpeg"
-          width={35} // Required when not using `fill`
-          height={60}
-          className="rounded-full mr-4 absolute right-3 top-2/4 transform -translate-y-2/4"
+          width={30} // Required when not using `fill`
+          height={50}
+          className="rounded-full mr-1 absolute right-3 top-2/4 transform -translate-y-2/4"
         />
         {/* Uncomment this if you are using an icon like FontAwesome */}
         {/* <FaRobot className="absolute right-3 top-2/4 transform -translate-y-2/4 text-blue-600 text-xl" /> */}

@@ -10,21 +10,22 @@ const GreetingProgress = () => {
           <img
             src="/copilot.jpeg"
             alt="Copilot Logo"
-            className="w-12 h-12 rounded-full mr-4" // Adjusted size and margin
+            className="w-8 h-8 rounded-full mr-3" // Adjusted size and margin
           />
-          <h1 className="text-sm font-medium text-gray-800 flex-1">
+          <h1 className="text-xs font-semibold text-gray-800 flex-1">
             Hi Mona, <span className="text-blue-600">68%</span> of goal achieved and the rest can be achieved by focusing on 20 top leads.
           </h1>
         </div>
 
         {/* Progress Bar Section */}
-        <div className="w-full ml-4 md:w-1/2">
+        <div className="w-full ml-3 md:w-1/2">
           {/* Progress Summary */}
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-600">
-              Target <span className="font-bold text-black">$45 million</span>
+          <span className="text-xs text-gray-500">1 month until Q4 ends</span>
+            <span className="text-xs font-medium text-gray-600">
+              Target <span className="font-semibold text-black">$45 million</span>
             </span>
-            <span className="text-sm text-gray-500">68% of target achieved</span>
+            <span className="text-xs text-gray-500">68% of target achieved</span>
           </div>
 
           {/* Progress Bar */}

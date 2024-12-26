@@ -193,32 +193,32 @@ const LeadCard: React.FC = () => {
         </div>
 
         {/* Right Side: Key Activities */}
-        <div className="flex-[1] bg-white shadow-md rounded-lg p-6 border border-gray-300">
-          <h3 className="text-sm font-semibold text-gray-800 mb-4">
+        <div className="flex-[1] bg-white shadow-md rounded-lg p-5 border border-gray-300">
+          <h3 className="text-sm text-gray-800 mb-4">
             Other key activities
           </h3>
           <div className="space-y-4">
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <div>
-                <p className="text-sm text-gray-800">Cafe A100 for Woodland Bank</p>
+                <p className="text-sm font-semibold text-gray-800">Cafe A100 for Woodland Bank</p>
                 <p className="text-xs text-gray-500">$280,000 · 8 days to close</p>
               </div>
-              <button className="mt-4 text-sm text-gray-600 font-medium hover:underline">
-                Review draft
+              <button className="mt-4 text-xs text-gray-600 font-medium hover:underline">
+                Review draft and reply to Chris Naido
               </button>
             </div>
 
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <div>
-                <p className="text-sm text-gray-800">Partnership opportunity for Fabrikam</p>
+                <p className="text-sm font-semibold text-gray-800">Partnership opportunity for Fabrikam</p>
                 <p className="text-xs text-gray-500">$5,000,000 · 12 days to close</p>
               </div>
-              <button className="mt-4 text-sm text-gray-600 font-medium hover:underline">
-                Prepare
+              <button className="mt-4 text-xs text-gray-600 font-medium hover:underline">
+                Prepare me for Fabrikam's stakeholder meeting
               </button>
             </div>
           </div>
-          <button className="mt-4 text-sm text-blue-800 hover:underline">
+          <button className="mt-4 text-sm font-semibold text-blue-800 hover:underline">
             Show all key activities
           </button>
         </div>
