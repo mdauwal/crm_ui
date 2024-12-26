@@ -8,7 +8,7 @@ const GreetingProgress = () => {
         {/* Greeting Section */}
         <div className="flex items-center w-full md:w-1/2 mb-4 md:mb-0">
           <img
-            src="/copilot.jpg" // Replace with the actual path for the Copilot image
+            src="/copilot.jpeg"
             alt="Copilot Logo"
             className="w-12 h-12 rounded-full mr-4" // Adjusted size and margin
           />

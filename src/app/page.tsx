@@ -37,7 +37,7 @@ const navigation = [
   {
     name: "Pinned",
     href: "#",
-    icon: "/pin.jpg",
+    icon: "/pin.png",
     current: false,
     hasDropdown: true,
     children: [
@@ -257,7 +257,7 @@ export default function Example() {
                       </ul>
                     </li>
                     <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">
+                      <div className="text-sm/6 font-bold text-gray-800">
                         My Work
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -267,9 +267,9 @@ export default function Example() {
                               href={work.href}
                               className={classNames(
                                 work.current
-                                  ? "bg-gray-50 text-gray-600"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                  ? "bg-gray-50 text-gray-800"
+                                  : "text-gray-700 hover:border hover:bg-gray-50 hover:text-gray-800",
+                                "group flex gap-x-3 rounded-md p-2 text-sm/6"
                               )}
                             >
                               <img
@@ -279,7 +279,7 @@ export default function Example() {
                                   work.current
                                     ? "border-gray-600"
                                     : "border-gray-200 group-hover:border-gray-600",
-                                  "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                                  "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                                 )}
                               />
                               <span className="truncate">{work.name}</span>
@@ -291,7 +291,7 @@ export default function Example() {
 
                     {/* customers */}
                     <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">
+                      <div className="text-sm/6 font-bold text-gray-800">
                         Customers
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -301,9 +301,9 @@ export default function Example() {
                               href={customer.href}
                               className={classNames(
                                 customer.current
-                                  ? "bg-gray-50 text-gray-600"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                  ? "bg-gray-50 text-gray-800"
+                                  : "text-gray-700 hover:border hover:bg-gray-50 hover:text-gray-600",
+                                "group flex gap-x-3 rounded-md p-2 text-sm/6"
                               )}
                             >
                               <img
@@ -313,7 +313,7 @@ export default function Example() {
                                   customer.current
                                     ? "border-gray-600"
                                     : "border-gray-200 group-hover:border-gray-600",
-                                  "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                                  "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                                 )}
                               />
                               <span className="truncate">{customer.name}</span>
@@ -325,7 +325,7 @@ export default function Example() {
 
                     {/* Sales */}
                     <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">
+                      <div className="text-sm/6 font-bold text-gray-800">
                         Sales
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -335,9 +335,9 @@ export default function Example() {
                               href={sale.href}
                               className={classNames(
                                 sale.current
-                                  ? "bg-gray-50 text-gray-600"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                  ? "bg-gray-50 text-gray-800"
+                                  : "text-gray-700 hover:border hover:bg-gray-50 hover:text-gray-800",
+                                "group flex gap-x-3 rounded-md p-2 text-sm/6"
                               )}
                             >
                               <img
@@ -347,7 +347,7 @@ export default function Example() {
                                   sale.current
                                     ? "border-gray-600"
                                     : "border-gray-200 group-hover:border-gray-600",
-                                  "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                                  "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                                 )}
                               />
                               <span className="truncate">{sale.name}</span>
@@ -359,7 +359,7 @@ export default function Example() {
 
                     {/* Collateral */}
                     <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">
+                      <div className="text-sm/6 font-bold text-gray-800">
                         Collateral
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -369,9 +369,9 @@ export default function Example() {
                               href={collaterals.href}
                               className={classNames(
                                 collaterals.current
-                                  ? "bg-gray-50 text-gray-600"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                  ? "bg-gray-50 text-gray-800"
+                                  : "text-gray-700 hover:border hover:bg-gray-50 hover:text-gray-800",
+                                "group flex gap-x-3 rounded-md p-2 text-sm/6"
                               )}
                             >
                               <img
@@ -381,7 +381,7 @@ export default function Example() {
                                   collaterals.current
                                     ? "border-gray-600"
                                     : "border-gray-200 group-hover:border-gray-600",
-                                  "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                                  "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                                 )}
                               />
                               <span className="truncate">
@@ -395,7 +395,7 @@ export default function Example() {
 
                     {/* marketing */}
                     <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">
+                      <div className="text-sm/6 font-bold text-gray-800">
                         Marketing
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -405,9 +405,9 @@ export default function Example() {
                               href={marketing.href}
                               className={classNames(
                                 marketing.current
-                                  ? "bg-gray-50 text-gray-600"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                  ? "bg-gray-50 text-gray-800"
+                                  : "text-gray-700 hover:border hover:bg-gray-50 hover:text-gray-800",
+                                "group flex gap-x-3 rounded-md p-2 text-sm/6"
                               )}
                             >
                               <img
@@ -417,7 +417,7 @@ export default function Example() {
                                   marketing.current
                                     ? "border-gray-600"
                                     : "border-gray-200 group-hover:border-gray-600",
-                                  "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white"
+                                  "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white"
                                 )}
                               />
                               <span className="truncate">{marketing.name}</span>
@@ -429,7 +429,7 @@ export default function Example() {
 
                     {/* Performance */}
                     <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">
+                      <div className="text-sm/6 font-bold text-gray-800">
                         Performance
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
@@ -439,17 +439,17 @@ export default function Example() {
                               href={perform.href}
                               className={classNames(
                                 perform.current
-                                  ? "bg-purple-50 text-gray-600"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-600",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
+                                  ? "bg-purple-50 text-gray-800"
+                                  : "text-gray-700 hover:bg-gray-50 hover:border hover:text-gray-800",
+                                "group flex gap-x-3 rounded-md p-2 text-sm/6"
                               )}
                             >
                               <span
                                 className={classNames(
                                   perform.current
-                                    ? "border-gray-600 text-gray-600"
+                                    ? "border-gray-600 text-gray-800"
                                     : "border-gray-200 text-gray-400 group-hover:border-gray-600 group-hover:text-gray-600",
-                                  "flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium"
+                                  "flex size-6 shrink-0 items-center justify-center rounded-lg bg-white text-[0.625rem] font-medium"
                                 )}
                               >
                                 {perform.icon}
@@ -460,19 +460,6 @@ export default function Example() {
                         ))}
                       </ul>
                     </li>
-
-                    {/* <li className="mt-auto">
-                      <a
-                        href="#"
-                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-gray-600"
-                      >
-                        <Cog6ToothIcon
-                          aria-hidden="true"
-                          className="size-6 shrink-0 text-gray-400 group-hover:text-gray-600"
-                        />
-                        Settings
-                      </a>
-                    </li> */}
                   </ul>
                 </nav>
               </div>

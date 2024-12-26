@@ -20,7 +20,7 @@ const EnhancedHeader: React.FC<EnhancedHeaderProps> = ({ search, setSearch }) =>
         {/* Icon inside input */}
         <img
           alt="copilot"
-          src="/copilot.jpg"
+          src="/copilot.jpeg"
           width={35} // Required when not using `fill`
           height={60}
           className="rounded-full mr-4 absolute right-3 top-2/4 transform -translate-y-2/4"
