@@ -13,20 +13,19 @@ const EnhancedHeader: React.FC<EnhancedHeaderProps> = ({ search, setSearch }) =>
         <input
           type="text"
           placeholder="Sort, filter, and search with Copilot"
-          className="border border-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none rounded-md p-2 text-sm w-full shadow-sm pr-10"
+          className="border border-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none rounded-md p-2 text-sm w-full shadow-sm pr-14" // Increased padding-right for image space
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         {/* Icon inside input */}
         <img
-          alt="copilot"
-          src="/copilot.jpeg"
-          width={30} // Required when not using `fill`
-          height={50}
-          className="rounded-full mr-1 absolute right-3 top-2/4 transform -translate-y-2/4"
-        />
-        {/* Uncomment this if you are using an icon like FontAwesome */}
-        {/* <FaRobot className="absolute right-3 top-2/4 transform -translate-y-2/4 text-blue-600 text-xl" /> */}
+  alt="copilot"
+  src="/copilot.jpeg"
+  width={20}
+  height={20}
+  className="rounded-full absolute right-2 top-1/2 transform -translate-y-1/2 sm:right-3 sm:width[30px] sm:height[30px]" 
+/>
+
       </div>
     </div>
   );

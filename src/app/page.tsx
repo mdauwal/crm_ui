@@ -31,7 +31,6 @@ const navigation = [
     children: [
       { name: "Customer", href: "#", current: true },
       { name: "Declined", href: "#" },
-      { name: "Adjust", href: "#" },
     ],
   },
   {
@@ -41,9 +40,9 @@ const navigation = [
     current: false,
     hasDropdown: true,
     children: [
-      { name: "Loan Status", href: "#" },
-      { name: "Loan Restructuring", href: "#" },
-      { name: "Loan Top-up", href: "#" },
+      { name: "Processed", href: "#" },
+      { name: "Ongoing", href: "#" },
+      { name: "Draft", href: "#" },
     ],
   },
   // { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
@@ -468,7 +467,7 @@ export default function Example() {
         </Dialog>
 
         {/* Static sidebar for desktop */}
-        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-50 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
             <nav className="flex flex-1 flex-col">
@@ -732,7 +731,7 @@ export default function Example() {
           </div>
         </div>
 
-        <div className="lg:pl-72">
+        <div className="lg:pl-60">
           <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-xs sm:gap-x-6 sm:px-6 lg:px-8">
             <button
               type="button"
@@ -808,7 +807,7 @@ export default function Example() {
             </div>
           </div>
 
-          <main className="py-10">
+          <main className="py-6">
             <div className="px-4 sm:px-6 lg:px-8">
               {/* Menu */}
       <button

@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 export default function EngageModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"engage" | "search">("engage");
@@ -18,7 +19,7 @@ export default function EngageModal() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-lg sm:max-w-3xl w-full transform transition-all duration-300">
+          <div className="bg-white rounded-lg shadow-lg max-w-sm md:max-w-lg lg:max-w-3xl w-11/12 md:w-full transform transition-all duration-300 overflow-y-auto max-h-[90vh]">
             {/* Modal Header */}
             <div className="flex items-center p-4 border-b">
               <img
@@ -59,8 +60,7 @@ export default function EngageModal() {
             </div>
 
             {/* Highlighted Note */}
-            <div className="bg-blue-50 p-4 mx-4 my-2 rounded-lg shadow-sm flex items-start space-x-4">
-              {/* Left Section with Star Image */}
+            <div className="bg-blue-50 p-4 mx-4 my-2 rounded-lg shadow-sm flex flex-wrap items-start space-x-4">
               <img
                 src="/stars.png"
                 alt="Star Icon"
@@ -71,8 +71,7 @@ export default function EngageModal() {
                   Jane may be interested in upgrading espresso machines for her
                   in-store coffee shops.
                 </p>
-                <div className="flex mt-3 space-x-3">
-                  {/* Edit Button */}
+                <div className="flex mt-3 flex-wrap gap-3">
                   <button className="flex items-center justify-center text-blue-800 border border-blue-800 text-xs px-4 py-2 rounded hover:bg-blue-100">
                     <img
                       src="/pens.png"
@@ -81,7 +80,6 @@ export default function EngageModal() {
                     />
                     Edit
                   </button>
-                  {/* Approve and Send Button */}
                   <button className="flex items-center justify-center text-white bg-blue-800 text-xs px-4 py-2 rounded hover:bg-blue-900">
                     <img
                       src="/sends.png"
@@ -146,9 +144,9 @@ export default function EngageModal() {
             </div>
 
             {/* About Section */}
-            <div className="bg-white shadow-md rounded-lg p-6 border border-gray-300 p-4 mx-4 my-4">
+            <div className="bg-white shadow-md rounded-lg border border-gray-300 p-4 mx-4 my-4">
               <h3 className="font-semibold mb-3 text-black">About Jane</h3>
-              <p className="text-sm text-black-100">
+              <p className="text-sm text-gray-600">
                 Jane Reyes, the Chief Operating Officer of Northwind Traders, is
                 a dynamic leader with a proven track record in optimizing
                 operations and enhancing customer experiences.

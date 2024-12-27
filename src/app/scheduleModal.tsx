@@ -24,7 +24,7 @@ const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) 
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 px-4">
       <div className="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative">
         {/* Close Button */}
         <button
@@ -39,7 +39,7 @@ const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) 
           <img
             src="/auwal.jpeg" // Replace with the actual image path
             alt="Auwal"
-            className="w-10 h-10 rounded-full mr-3"
+            className="w-12 h-12 rounded-full mr-3"
           />
           <h2 className="text-lg font-semibold text-gray-700">
             Schedule a Meeting with Auwal
@@ -105,17 +105,17 @@ const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) 
           </div>
 
           {/* Buttons */}
-          <div className="flex justify-end space-x-4 mt-6">
+          <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4 mt-6">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+              className="w-full sm:w-auto px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Schedule Meeting
             </button>
@@ -125,4 +125,5 @@ const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) 
     </div>
   );
 };
- export default ScheduleMeetingModal;
+
+export default ScheduleMeetingModal;
