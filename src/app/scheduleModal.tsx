@@ -41,7 +41,7 @@ const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) 
             alt="Auwal"
             className="w-12 h-12 rounded-full mr-3"
           />
-          <h2 className="text-lg font-semibold text-gray-700">
+          <h2 className="text-sm font-semibold text-gray-700">
             Schedule a Meeting with Auwal
           </h2>
         </div>
@@ -93,14 +93,15 @@ const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({ onClose }) 
             <div>
               <label className="block text-gray-700 font-medium mb-1">Agenda</label>
               <textarea
-                name="agenda"
-                value={formData.agenda}
-                onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Describe the meeting agenda"
-                rows={4}
-                required
-              ></textarea>
+  name="agenda"
+  value={formData.agenda}
+  onChange={handleChange}
+  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+  placeholder="Describe the meeting agenda"
+  rows={4}
+  required
+></textarea>
+
             </div>
           </div>
 

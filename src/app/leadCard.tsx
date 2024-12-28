@@ -149,12 +149,13 @@ const LeadCard: React.FC = () => {
           </p>
 
           <div className="flex overflow-hidden gap-4 relative">
-            <button
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full shadow-md"
-              onClick={handleNext}
-            >
-              &#8594;
-            </button>
+          <button
+  className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
+  onClick={handleNext}
+>
+  <span className="text-lg">&#8594;</span>
+</button>
+
 
             {/* Lead Cards */}
             {leads.map((lead, index) => {

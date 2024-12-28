@@ -12,10 +12,10 @@ const GreetingProgress = () => {
             alt="Copilot Logo"
             className="w-6 h-6 md:w-8 md:h-8 rounded-full mr-2"
           />
-          <h1 className="text-xs md:text-sm font-semibold text-gray-800 overflow-hidden text-ellipsis">
+          <h6 className="text-xs md:text-sm font-semibold text-gray-800 overflow-hidden text-ellipsis">
             Hi Mona, <span className="text-blue-600">68%</span> of goal achieved
             and the rest can be achieved by focusing on 20 top leads.
-          </h1>
+          </h6>
         </div>
 
         {/* Progress Bar Section */}
